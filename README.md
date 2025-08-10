@@ -13,56 +13,48 @@ link para o material completo: https://giovanidisperati.github.io/GRUAPIM/Aula01
 ```
 /
 ├── Bloco1/
-│   ├── exercicio01\_CalculadoraMedia.java
-│   ├── exercicio02\_TabuadaFor.java
-│   ├── exercicio03\_AdivinheNumero.java
-│   └── exercicio04\_SomaImparesArray.java
+│   ├── exercicio01.java
+│   ├── exercicio02.java
+│   ├── exercicio03.java
+│   └── exercicio04.java
 ├── Bloco2/
-│   ├── exercicio05\_Carro.java
-│   ├── exercicio05\_TesteCarro.java
-│   ├── exercicio06\_Circulo.java
-│   ├── exercicio06\_TesteCirculo.java
-│   ├── exercicio07\_Veiculo.java
-│   ├── exercicio07\_CarroHeranca.java
-│   ├── exercicio07\_Moto.java
-│   ├── exercicio07\_TesteVeiculos.java
-│   ├── exercicio08\_SaldoInsuficienteException.java
-│   ├── exercicio08\_ContaBancaria.java
-│   └── exercicio08\_TesteConta.java
+│   ├── exercicio05.java
+│   ├── exercicio06.java
+│   ├── exercicio07.java
+│   ├── exercicio08.java
 ├── Bloco3/
-│   ├── exercicio09\_ListaTarefas.java
-│   ├── exercicio10\_OrdenandoNumeros.java
-│   ├── exercicio11\_FilaAtendimentoLinkedList.java
-│   └── exercicio12\_BuscaCidade.java
+│   ├── exercicio09.java
+│   ├── exercicio10.java
+│   ├── exercicio11.java
+│   └── exercicio12.java
 ├── Bloco4/
-│   ├── exercicio13\_RemoverDuplicatas.java
-│   ├── exercicio14\_HashSetEmails.java
-│   ├── exercicio15\_LinkedHashSetDias.java
-│   ├── exercicio16\_TreeSetNomes.java
-│   └── exercicio17\_TreeSetProdutos.java
+│   ├── exercicio13.java
+│   ├── exercicio14.java
+│   ├── exercicio15.java
+│   ├── exercicio16.java
+│   └── exercicio17.java
 ├── Bloco5/
-│   ├── exercicio18\_DicionarioSimples.java
-│   ├── exercicio19\_ContadorPalavras.java
-│   ├── exercicio20\_AgendaContatos.java
-│   ├── exercicio21\_LinkedHashMapProdutos.java
-│   ├── exercicio22\_TreeMapNotas.java
-│   └── exercicio23\_VerificarChaveValor.java
+│   ├── exercicio18.java
+│   ├── exercicio19.java
+│   ├── exercicio20.java
+│   ├── exercicio21.java
+│   ├── exercicio22.java
+│   └── exercicio23.java
 ├── Bloco6/
-│   ├── exercicio24\_FilaImpressao.java
-│   └── exercicio25\_PilhaLivros.java
+│   ├── exercicio24.java
+│   └── exercicio25.java
 ├── Bloco7/
-│   ├── exercicio26\_CatalogoProdutosCategoria.java
-│   ├── exercicio27\_SorteioGanhadoresUnicos.java
-│   ├── exercicio28\_InverterFrase.java
-│   ├── exercicio29\_HistoricoNavegacao.java
-│   └── exercicio30\_AgruparAlunosNota.java
+│   ├── exercicio26.java
+│   ├── exercicio27.java
+│   ├── exercicio28.java
+│   ├── exercicio29.java
+│   └── exercicio30.java
 ├── Bloco8/
-│   ├── exercicio31\_AnalisadorDeClasse.java
-│   ├── exercicio32\_ModificarAtributoPrivado.java
-│   └── exercicio33\_ExecutorDeTestes.java
-└── Bloco9/
-├── exercicio34\_vcRiquinho/
-│   └── main.java
+│   ├── exercicio31.java
+│   ├── exercicio32.java
+│   └── exercicio33.java
+├── Bloco9/
+│   └── exercicio34.java
 
 ```
 ---
@@ -73,12 +65,12 @@ Para compilar e executar qualquer exercício:
 1. Abra o terminal na pasta do projeto.
 2. Compile o arquivo desejado:
    ```bash
-   javac Bloco1/exercicio01_CalculadoraMedia.java
+   javac Bloco1/exercicio01.java
 
 3. Execute o programa:
 
    ```bash
-   java Bloco1.exercicio01_CalculadoraMedia
+   java Bloco1.exercicio01
 
 
 > **Obs.:** Certifique-se de que o nome da classe pública dentro do arquivo corresponde exatamente ao nome do arquivo `.java`.
