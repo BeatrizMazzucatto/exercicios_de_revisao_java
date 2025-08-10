@@ -54,7 +54,8 @@ link para o material completo: https://giovanidisperati.github.io/GRUAPIM/Aula01
 │   ├── exercicio32.java
 │   └── exercicio33.java
 ├── Bloco9/
-│   └── exercicio34.java
+│   ├── Lachonete_quase_tres_lanches.java
+│   └── VcRiquinho.java
 
 ```
 ---
@@ -138,6 +139,6 @@ Para compilar e executar qualquer exercício:
 
 ### **Bloco 9 — Exercícios Finais**
 
-34. **VcRiquinho** — Exercício final.
+34. **VcRiquinho e Lachonete_quase_tres_lanches** - Exercícios Finais 
 
 ---
