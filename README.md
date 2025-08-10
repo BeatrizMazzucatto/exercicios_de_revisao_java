@@ -3,6 +3,7 @@
 ## 📖 Sobre
 
 Este repositório contém as soluções dos Exercícios de Revisão de Java da disciplina APIs e Microsserviços, lecionada por Giovani Disperati.
+
 link para o material completo: https://giovanidisperati.github.io/GRUAPIM/Aula01.html
 
 ---
@@ -62,8 +63,7 @@ link para o material completo: https://giovanidisperati.github.io/GRUAPIM/Aula01
 └── Bloco9/
 ├── exercicio34\_vcRiquinho/
 │   └── main.java
-└── exercicio35\_LanchoneteQuaseTresLanches/
-└── main.java
+
 ```
 ---
 
