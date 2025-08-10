@@ -147,6 +147,5 @@ Para compilar e executar qualquer exercício:
 ### **Bloco 9 — Exercícios Finais**
 
 34. **VcRiquinho** — Exercício final.
-35. **Lanchonete Quase Três Lanches** — Exercício final.
 
 ---
