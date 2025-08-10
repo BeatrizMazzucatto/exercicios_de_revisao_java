@@ -64,7 +64,7 @@ link para o material completo: https://giovanidisperati.github.io/GRUAPIM/Aula01
 │   └── main.java
 └── exercicio35\_LanchoneteQuaseTresLanches/
 └── main.java
-
+```
 ---
 
 ## 🛠️ Como Executar
@@ -79,7 +79,7 @@ Para compilar e executar qualquer exercício:
 
    ```bash
    java Bloco1.exercicio01_CalculadoraMedia
-   ```
+
 
 > **Obs.:** Certifique-se de que o nome da classe pública dentro do arquivo corresponde exatamente ao nome do arquivo `.java`.
 
