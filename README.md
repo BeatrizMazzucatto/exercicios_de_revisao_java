@@ -9,7 +9,7 @@ link para o material completo: https://giovanidisperati.github.io/GRUAPIM/Aula01
 
 ## 📂 Estrutura do Repositório
 
-``
+```
 /
 ├── Bloco1/
 │   ├── exercicio01\_CalculadoraMedia.java
