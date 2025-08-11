@@ -1,0 +1,90 @@
+@startuml
+!define ABSTRACT_CLASS abstract class
+
+ABSTRACT_CLASS Item {
+    # preco: double
+    # dataValidade: Date
+    # peso: double
+    --
+    + Item(preco: double, dataValidade: Date, peso: double)
+    + {abstract} descricao(): String
+    + calcularTotal(): double
+    + getPreco(): double
+    + getDataValidade(): Date
+    + getPeso(): double
+}
+
+class Pizza {
+    - recheio: String
+    - borda: String
+    - molho: String
+    --
+    + Pizza(preco: double, dataValidade: Date, peso: double, recheio: String, borda: String, molho: String)
+    + descricao(): String
+    + getRecheio(): String
+    + getBorda(): String
+    + getMolho(): String
+}
+
+class Lanche {
+    - tipoPao: String
+    - recheio: String
+    - molho: String
+    --
+    + Lanche(preco: double, dataValidade: Date, peso: double, tipoPao: String, recheio: String, molho: String)
+    + descricao(): String
+    + getTipoPao(): String
+    + getRecheio(): String
+    + getMolho(): String
+}
+
+class Salgadinho {
+    - tipo: String
+    - massa: String
+    - recheio: String
+    --
+    + Salgadinho(preco: double, dataValidade: Date, peso: double, tipo: String, massa: String, recheio: String)
+    + descricao(): String
+    + getTipo(): String
+    + getMassa(): String
+    + getRecheio(): String
+}
+
+class Pedido {
+    - cliente: String
+    - itens: List<Item>
+    - taxaServico: double
+    --
+    + Pedido(cliente: String, taxaServico: double)
+    + adicionarItem(item: Item): void
+    + calcularSubtotal(): double
+    + calcularTaxaServico(): double
+    + calcularTotal(): double
+    + calcularTroco(valorRecebido: double): double
+    + gerarNota(): String
+    + getCliente(): String
+    + getItens(): List<Item>
+    + getTaxaServico(): double
+}
+
+class LanchoneteMain {
+    + {static} main(args: String[]): void
+}
+
+' Relacionamentos
+Item <|-- Pizza
+Item <|-- Lanche
+Item <|-- Salgadinho
+
+Pedido *-- Item : contém 1..*
+LanchoneteMain ..> Pedido : usa
+LanchoneteMain ..> Pizza : cria
+LanchoneteMain ..> Lanche : cria
+LanchoneteMain ..> Salgadinho : cria
+
+' Notas
+note right of Item : Classe abstrata base\ncom método abstrato descricao()
+
+note bottom of Pedido : Gerencia lista de itens\ne calcula totais com taxa de serviço
+
+@enduml

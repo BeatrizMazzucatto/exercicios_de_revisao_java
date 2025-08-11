@@ -1,0 +1,152 @@
+@startuml VeRiquinhoSystem
+
+!theme plain
+
+' Classes abstratas
+abstract class Cliente {
+    #nome: String
+    #email: String
+    +Cliente(nome: String, email: String)
+    +getNome(): String
+    +setNome(nome: String): void
+    +getEmail(): String
+    +setEmail(email: String): void
+    {abstract} +getDocumento(): String
+}
+
+abstract class Conta {
+    #saldo: double
+    #cliente: Cliente
+    +Conta(saldo: double, cliente: Cliente)
+    {abstract} +calcularRendimento(dias: int): double
+    {abstract} +calcularTaxaServico(rendimento: double): double
+    +getSaldo(): double
+    +setSaldo(saldo: double): void
+    +getCliente(): Cliente
+}
+
+abstract class ProdutoInvestimento {
+    #nome: String
+    #descricao: String
+    +ProdutoInvestimento(nome: String, descricao: String)
+    +getNome(): String
+    +setNome(nome: String): void
+    +getDescricao(): String
+    +setDescricao(descricao: String): void
+}
+
+' Classes concretas de Cliente
+class PessoaFisica {
+    -cpf: String
+    +PessoaFisica(nome: String, email: String, cpf: String)
+    +getDocumento(): String
+    +getCpf(): String
+    +setCpf(cpf: String): void
+}
+
+class PessoaJuridica {
+    -cnpj: String
+    +PessoaJuridica(nome: String, email: String, cnpj: String)
+    +getDocumento(): String
+    +getCnpj(): String
+    +setCnpj(cnpj: String): void
+}
+
+' Classes concretas de Conta
+class ContaCorrente {
+    +ContaCorrente(saldo: double, cliente: Cliente)
+    +calcularRendimento(dias: int): double
+    +calcularTaxaServico(rendimento: double): double
+}
+
+class ContaCDI {
+    -{static} TAXA_SERVICO: double = 0.0007
+    -{static} CDI_DIARIO: double = 0.0035
+    +ContaCDI(saldo: double, cliente: Cliente)
+    +calcularRendimento(dias: int): double
+    +calcularTaxaServico(rendimento: double): double
+}
+
+class ContaInvestAuto {
+    -produtos: List<ProdutoInvestimento>
+    +ContaInvestAuto(saldo: double, cliente: Cliente)
+    +adicionarProduto(produto: ProdutoInvestimento): void
+    +calcularRendimento(dias: int): double
+    +calcularTaxaServico(rendimento: double): double
+}
+
+' Classes concretas de ProdutoInvestimento
+class RendaFixa {
+    -rendimentoMensal: double
+    -periodoCarencia: int
+    +RendaFixa(nome: String, descricao: String, rendimentoMensal: double, periodoCarencia: int)
+    +getRendimentoMensal(): double
+    +setRendimentoMensal(rendimentoMensal: double): void
+    +getPeriodoCarencia(): int
+    +setPeriodoCarencia(periodoCarencia: int): void
+}
+
+class RendaVariavel {
+    -rendimentoEsperado: double
+    +RendaVariavel(nome: String, descricao: String, rendimentoEsperado: double)
+    +getRendimentoEsperado(): double
+    +setRendimentoEsperado(rendimentoEsperado: double): void
+}
+
+' Classe gerenciadora
+class VeRiquinhoManager {
+    -clientes: List<Cliente>
+    -produtos: List<ProdutoInvestimento>
+    +VeRiquinhoManager()
+    +adicionarCliente(cliente: Cliente): void
+    +buscarClientePorDocumento(documento: String): Cliente
+    +atualizarCliente(documento: String, novoCliente: Cliente): boolean
+    +removerCliente(documento: String): boolean
+    +adicionarProduto(produto: ProdutoInvestimento): void
+    +buscarProdutoPorNome(nome: String): ProdutoInvestimento
+    +atualizarProduto(nome: String, novoProduto: ProdutoInvestimento): boolean
+    +removerProduto(nome: String): boolean
+    +simularRendimento(cliente: Cliente, dias: int): String
+    -getContasDoCliente(cliente: Cliente): List<Conta>
+}
+
+class Main {
+    +{static} main(args: String[]): void
+}
+
+' Relações de herança
+Cliente <|-- PessoaFisica
+Cliente <|-- PessoaJuridica
+
+Conta <|-- ContaCorrente
+Conta <|-- ContaCDI
+Conta <|-- ContaInvestAuto
+
+ProdutoInvestimento <|-- RendaFixa
+ProdutoInvestimento <|-- RendaVariavel
+
+' Relações de composição/agregação
+Conta o-- Cliente : possui
+ContaInvestAuto o-- ProdutoInvestimento : "1..*" contém
+
+' Relações de dependência
+VeRiquinhoManager --> Cliente : gerencia
+VeRiquinhoManager --> ProdutoInvestimento : gerencia
+VeRiquinhoManager ..> Conta : usa
+VeRiquinhoManager ..> ContaCorrente : cria
+VeRiquinhoManager ..> ContaCDI : cria
+
+Main ..> VeRiquinhoManager : usa
+Main ..> Cliente : usa
+Main ..> PessoaFisica : cria
+Main ..> PessoaJuridica : cria
+Main ..> ProdutoInvestimento : usa
+Main ..> RendaFixa : cria
+Main ..> RendaVariavel : cria
+
+' Notas
+note right of ContaInvestAuto : Calcula rendimento baseado\nnos produtos adicionados
+note right of VeRiquinhoManager : Classe principal que\ngerencia todo o sistema
+note right of Conta : Associação com Cliente:\ncada conta pertence a\num cliente específico
+
+@enduml
